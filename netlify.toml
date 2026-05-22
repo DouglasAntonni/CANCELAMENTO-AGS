@@ -1,0 +1,11 @@
+[[redirects]]
+  from = "/_server/*"
+  to = "https://cancelamento-ags.douglas-antonni-verissimo.workers.dev/_server/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "https://cancelamento-ags.douglas-antonni-verissimo.workers.dev/:splat"
+  status = 200
+  force = false
