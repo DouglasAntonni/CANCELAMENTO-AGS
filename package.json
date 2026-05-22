@@ -4,9 +4,9 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "dev": "vite dev",
-    "build": "vite build",
-    "build:dev": "vite build --mode development",
+    "dev": "vite",
+    "build": "vite build && node -e \"if(process.env.NETLIFY) { const fs = require('fs'); const txt = '/_server/*  https://cancelamento-ags.douglas-antonni-verissimo.workers.dev/_server/:splat  200\\n/*  https://cancelamento-ags.douglas-antonni-verissimo.workers.dev/:splat  200'; fs.writeFileSync('dist/client/_redirects', txt); console.log('Generated Netlify Proxy Redirects'); }\"",
+    "start": "node dist/server/server.js",
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write ."
