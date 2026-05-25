@@ -38,6 +38,11 @@ export const Route = createRootRoute({
         content: "Sistema de gerenciamento de cancelamentos AGS Telecom",
       },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "AGS Telecom" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "AGS Telecom - Cancelamento Express" },
+      { name: "twitter:description", content: "Sistema de gerenciamento de cancelamentos AGS Telecom" },
+      { name: "theme-color", content: "#0f172a" }, // Cores do Tailwind (slate-900)
     ],
     links: [
       {

@@ -3,7 +3,6 @@ import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import viteReact from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import tsConfigPaths from "vite-tsconfig-paths";
-import { cloudflare } from "@cloudflare/vite-plugin";
 
 export default defineConfig(async ({ command, mode }) => {
   const internalPlugins = [];
@@ -15,18 +14,6 @@ export default defineConfig(async ({ command, mode }) => {
   internalPlugins.push(tsConfigPaths({ projects: ["./tsconfig.json"] }));
 
   // Cloudflare plugin removed for Netlify support
-  // 3. Cloudflare Pages build compatibility
-  if (command === "build") {
-    try {
-      internalPlugins.push(
-        cloudflare({
-          viteEnvironment: { name: "ssr" },
-        }),
-      );
-    } catch (e) {
-      console.warn("Could not load Cloudflare plugin:", e);
-    }
-  }
 
   // 4. TanStack Start Vite integration with proper route/server-only isolation
   internalPlugins.push(

@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /dashboard
+Disallow: /registros
+Disallow: /membros
+Disallow: /perfil
+
+# Permite acesso à raiz e login
+Allow: /
+Allow: /login
+
+Sitemap: https://cancelamento-express.com/sitemap.xml
